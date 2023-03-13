@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://badcop.games/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Badcop Games'
 theme = 'blank'
