@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ $bearer := printf "%s" .Site.Params.itch | printf "%s%s" "Bearer " }}
+  {{ $data := getJSON "https://itch.io/api/1/key/my-games" (dict "Authorization" $bearer )  }}
+	<main>
+		{{ range sort $data.games ".created_at" "desc" (where $data.games ".published" "==" true) }}
+    <img src="{{ .cover_url }}" />
+		{{ end }}
+	</main>
+{{ partial "sidebar.html" . }}
+{{ end }}
