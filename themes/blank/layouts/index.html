@@ -1,9 +1,11 @@
 {{ define "main" }}
   {{ $bearer := printf "%s" .Site.Params.itch | printf "%s%s" "Bearer " }}
   {{ $data := getJSON "https://itch.io/api/1/key/my-games" (dict "Authorization" $bearer )  }}
+  {{ $image := resources.Get "logo.png" }}
+  {{ $image := $image.Resize "600x" }}
 	<main>
     <div id="banner">
-      <img src="logo.png" class="logo" />
+      <img src="{{ $image.RelPermalink }}" class="logo" />
       <h1>badcop.games</h1>
     </div>
     <div class="container">
