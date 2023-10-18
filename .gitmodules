@@ -1,0 +1,3 @@
+[submodule "static/jampack"]
+	path = static/jampack
+	url = git@github.com:cgsdev0/jampack.git
